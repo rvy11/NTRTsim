@@ -1,4 +1,4 @@
-find_package(catkin REQUIRED COMPONENTS std_msgs sensor_msgs geometry_msgs)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs geometry_msgs)
 
 link_libraries(tgcreator controllers core)
 
@@ -22,6 +22,8 @@ find_package(osgGA)
 find_package(osgText)
 set(OSG_LIBRARIES ${OSG_LIBRARY} ${OSGVIEWER_LIBRARY} ${OPENTHREADS_LIBRARY} ${OSGGA_LIBRARY} ${OSGTEXT_LIBRARY})
 include_directories(SYSTEM ${OSG_INCLUDE_DIR})
+include_directories(${catkin_INCLUDE_DIRS})
+target_include_directories(AppSUPERballGPS PRIVATE /home/rvy/gps_superball_public/src/gps_agent_pkg/msg_gen/cpp/include)
 
 #target_link_libraries (AppSUPERballGPS FileHelpers ${OSG_LIBRARIES})
-target_link_libraries (AppSUPERballGPS FileHelpers /opt/ros/indigo/lib/librostime.so /opt/ros/indigo/lib/libroscpp.so /opt/ros/indigo/lib/librosconsole.so /opt/ros/indigo/lib/libroscpp_serialization.so ${OSG_LIBRARIES})
+target_link_libraries (AppSUPERballGPS FileHelpers /opt/ros/kinetic/lib/librostime.so /opt/ros/kinetic/lib/libroscpp.so /opt/ros/kinetic/lib/librosconsole.so /opt/ros/kinetic/lib/libroscpp_serialization.so ${OSG_LIBRARIES})

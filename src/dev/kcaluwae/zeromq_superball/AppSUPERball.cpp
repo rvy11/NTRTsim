@@ -52,7 +52,7 @@
 #include "std_msgs/UInt16.h"
 #include "gps_agent_pkg/SUPERballState.h"
 #include "gps_agent_pkg/SUPERballStateArray.h"
-#include "superball_msg/TimestampedFloat32.h"
+//#include "superball_msg/TimestampedFloat32.h"
 
 // OSG
 #include <osg/Geometry>
@@ -85,7 +85,7 @@
 class motor_pos_cb_class {
 public:
 	float motor_pos = 0.;
-	void cb(const superball_msg::TimestampedFloat32::ConstPtr& msg){
+	void cb(const std_msgs::Float32::ConstPtr& msg){
 		motor_pos = msg->data;
 	}
 };

@@ -539,8 +539,8 @@ int main(int argc, char** argv)
             std::cout << "(" << bottom_triangle[0] << ", " << bottom_triangle[1] << ", " << bottom_triangle[2] << ") " << current_face << "\n";
             
             // Publish the current state of the robot
-            //robot_state_pub_gps.publish(state_msg);
-            robot_state_pub_matlab.publish(state_msg);
+            robot_state_pub_gps.publish(state_msg);
+            //robot_state_pub_matlab.publish(state_msg);
     	}
 
         for (unsigned i=0; i<6; ++i) {
